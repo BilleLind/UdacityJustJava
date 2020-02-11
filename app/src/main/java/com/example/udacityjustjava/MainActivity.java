@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
+
     }
     /**
      * This method is called when the order button is clicked.
@@ -36,16 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void increment(View view) {
     setNumberOfCoffees(getNumberOfCoffees()+1);
-        TextView quantityTextView = (TextView) findViewById(
-                R.id.quantity_number);
-    quantityTextView.setText("" + numberOfCoffees);
+
+    display(numberOfCoffees);
     }
     public void decrement(View view) {
         if (getNumberOfCoffees()==0) {System.out.println("Error, at 0 coffees");
         } else { setNumberOfCoffees(getNumberOfCoffees()-1);
-            TextView quantityTextView = (TextView) findViewById(
-                    R.id.quantity_number);
-        quantityTextView.setText("" + numberOfCoffees);}
+            display(numberOfCoffees);}
     }
 
 
