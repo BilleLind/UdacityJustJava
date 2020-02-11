@@ -33,18 +33,19 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         display(numberOfCoffees);
-        displayPrice(numberOfCoffees*20);
+        displayPrice(numberOfCoffees);
     }
 
     public void increment(View view) {
     setNumberOfCoffees(getNumberOfCoffees()+1);
-
     display(numberOfCoffees);
+    displayPrice(numberOfCoffees);
     }
     public void decrement(View view) {
         if (getNumberOfCoffees()==0) {System.out.println("Error, at 0 coffees");
         } else { setNumberOfCoffees(getNumberOfCoffees()-1);
-            display(numberOfCoffees);}
+            display(numberOfCoffees);
+        displayPrice(numberOfCoffees);}
     }
 
 
@@ -61,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void displayPrice(int numberOfCoffees) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(numberOfCoffees));
+        priceTextView.setText("Total: " +NumberFormat.getCurrencyInstance().format(numberOfCoffees*20)+ "\n" +
+                "Thank You!");
     }
 
 
