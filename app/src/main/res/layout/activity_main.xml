@@ -84,7 +84,7 @@
             android:text="@string/ORDER"
             android:layout_marginLeft="16dp"
             android:textSize="16sp"
-            android:onClick="submitOrder"/>3
+            android:onClick="submitOrder"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

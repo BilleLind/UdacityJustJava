@@ -33,19 +33,25 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         display(numberOfCoffees);
-        displayPrice(numberOfCoffees);
+        int price = calculatePrice();
+        displayPrice(createOrderSummary(price));
     }
 
+    private String priceMessageMethod() {
+        int price = calculatePrice();
+        return "Total; " + price + " kr.";
+    }
     public void increment(View view) {
     setNumberOfCoffees(getNumberOfCoffees()+1);
     display(numberOfCoffees);
-    displayPrice(numberOfCoffees);
+displayPrice(priceMessageMethod());
     }
     public void decrement(View view) {
         if (getNumberOfCoffees()==0) {System.out.println("Error, at 0 coffees");
         } else { setNumberOfCoffees(getNumberOfCoffees()-1);
             display(numberOfCoffees);
-        displayPrice(numberOfCoffees);}
+            displayPrice(priceMessageMethod());
+        }
     }
 
 
@@ -60,11 +66,24 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given price on the screen.
      */
-    private void displayPrice(int numberOfCoffees) {
+    private void displayPrice(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText("Total: " +NumberFormat.getCurrencyInstance().format(numberOfCoffees*20)+ "\n" +
-                "Thank You!");
+        priceTextView.setText(message);
     }
+    private int calculatePrice() {
+        return (numberOfCoffees * 20); }
+
+
+    private String createCustomerGreeting(String firstName, String lastName) {
+        return "Welcome, " + firstName +" " + lastName + "!";
+    }
+
+    private String createOrderSummary(int price) {
+        String priceMessage = "Name: Yokarak\n" +
+                "Quantity: " + numberOfCoffees +
+                "\nTotal: " + price + " kr.\n" +
+                "Thank you!";
+        return priceMessage; }
 
 
 
