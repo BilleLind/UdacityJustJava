@@ -31,35 +31,25 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-
-        display(numberOfCoffees);
-        displayPrice(createOrderSummary(calculatePrice())+ "Thank you!"); //adding Thank you here, so it isn't displayed while "Browsing"
-
-
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only mail apps should handle this
         //intent.putExtra(Intent.EXTRA_EMAIL, addresses); should be the one if there
         intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java Order for " +name());
-
+        intent.putExtra(Intent.EXTRA_TEXT,createOrderSummary(calculatePrice()));
         if (intent.resolveActivity(getPackageManager())!=null) {
             startActivity(intent);
-        } else{ Log.i("Internet", "Internet - intent was null");}
-    }
+        } else{ Log.i("Internet", "Internet - intent was null");} }
 
     public void increment(View view) { // have added the creatOrderSummary here so it is updated for every click
-
         if (numberOfCoffees==24) {System.out.println("Error - to much Coffee!!"); }
         else { setNumberOfCoffees(getNumberOfCoffees()+1);}
     display(numberOfCoffees);
-    displayPrice(createOrderSummary(calculatePrice()));
-    }
+    displayPrice(createOrderSummary(calculatePrice())); }
     public void decrement(View view) {
-        if (getNumberOfCoffees()==0) {System.out.println("Error, at 0 coffees");
-        } else { setNumberOfCoffees(getNumberOfCoffees()-1);
+        if (getNumberOfCoffees()==0) {System.out.println("Error, at 0 coffees"); }
+        else { setNumberOfCoffees(getNumberOfCoffees()-1);
             display(numberOfCoffees);
-            displayPrice(createOrderSummary(calculatePrice()));
-        }
-    }
+            displayPrice(createOrderSummary(calculatePrice())); } }
 
 
     /**
