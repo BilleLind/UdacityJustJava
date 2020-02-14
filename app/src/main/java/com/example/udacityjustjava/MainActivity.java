@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void increment(View view) { // have added the creatOrderSummary here so it is updated for every click
-    setNumberOfCoffees(getNumberOfCoffees()+1);
+
+        if (numberOfCoffees<24) {System.out.println("Error - to much Coffee!!"); }
+        else { setNumberOfCoffees(getNumberOfCoffees()+1);}
     display(numberOfCoffees);
     displayPrice(createOrderSummary(calculatePrice()));
     }
@@ -82,13 +84,13 @@ public class MainActivity extends AppCompatActivity {
         CheckBox whippedCreamCheckBox =  findViewById(R.id.checkBox_whipped_cream); //connects the checkbox to whippedCreamCheckBox
         if (whippedCreamCheckBox.isChecked()) { //using the built in methods to check if it is check or not
              checkBox+="Add whipped cream\n";// adding the corresponding String message to be input below
-            price+=10;
+            price+=(8*numberOfCoffees);
         }
         //the same process happens below, note the "\n" as it changes to the next line
         CheckBox chocolateCheckBox = findViewById(R.id.checkBox_chocolate);
         if (chocolateCheckBox.isChecked()) {
             checkBox +="Add chocolate\n";
-            price+=10;
+            price+=(5*numberOfCoffees);
         }
         //connecting the input for
         EditText nameEditText = findViewById(R.id.editText_name);
