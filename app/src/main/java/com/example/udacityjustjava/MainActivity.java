@@ -3,15 +3,16 @@ package com.example.udacityjustjava;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.os.Bundle;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
-import java.text.NumberFormat;
+
 
 
 
 
 public class MainActivity extends AppCompatActivity {
-   static int numberOfCoffees;
+   private int numberOfCoffees;
     public int getNumberOfCoffees() {
         return numberOfCoffees;
     }
@@ -19,12 +20,13 @@ public class MainActivity extends AppCompatActivity {
         this.numberOfCoffees = numberOfCoffees;
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        CheckBox hasWippedCream =  findViewById(R.id.checkBox_whipped_cream);
 
 
     }
@@ -83,6 +85,9 @@ displayPrice(priceMessageMethod());
                 "Quantity: " + numberOfCoffees +
                 "\nTotal: " + price + " kr.\n" +
                 "Thank you!";
+        //if? for whipped cream
+
+
         return priceMessage; }
 
 

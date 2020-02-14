@@ -9,4 +9,6 @@
     <string name="minus">-</string>
     <string name="stringForcost">Total: 0,00 kr.</string>
     <string name="total"> Total: </string>
+    <string name="Topping">Toppings</string>
+    <string name="whippedCream">Whipped Cream</string>
 </resources>

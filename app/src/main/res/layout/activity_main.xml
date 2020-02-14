@@ -11,11 +11,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_width="409dp"
-        android:layout_height="354dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Topping"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:textAllCaps="true"/>
+
+        <CheckBox
+            android:id="@+id/checkBox_whipped_cream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/whippedCream"
+            android:textSize="16sp"
+            android:layout_marginLeft="16dp"
+            android:paddingLeft="24dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp" />
 
         <TextView
             android:id="@+id/Quantity"
