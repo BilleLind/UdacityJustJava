@@ -1,16 +1,14 @@
 package com.example.udacityjustjava;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-
-
-
-
-
 
 public class MainActivity extends AppCompatActivity {
    private int numberOfCoffees;
@@ -27,9 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-
     }
     /**
      * This method is called when the order button is clicked.
@@ -37,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         display(numberOfCoffees);
         displayPrice(createOrderSummary(calculatePrice())+ "Thank you!"); //adding Thank you here, so it isn't displayed while "Browsing"
+
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setData()
+
+        if (intent.resolveActivity(getPackageManager())!=null) {
+            startActivity(intent);
+        } else{ Log.i("Internet", "Internet - intent was null");}
     }
 
     public void increment(View view) { // have added the creatOrderSummary here so it is updated for every click
@@ -84,14 +87,12 @@ public class MainActivity extends AppCompatActivity {
         CheckBox whippedCreamCheckBox =  findViewById(R.id.checkBox_whipped_cream); //connects the checkbox to whippedCreamCheckBox
         if (whippedCreamCheckBox.isChecked()) { //using the built in methods to check if it is check or not
              checkBox+="Add whipped cream\n";// adding the corresponding String message to be input below
-            price+=(8*numberOfCoffees);
-        }
+            price+=(8*numberOfCoffees); }
         //the same process happens below, note the "\n" as it changes to the next line
         CheckBox chocolateCheckBox = findViewById(R.id.checkBox_chocolate);
         if (chocolateCheckBox.isChecked()) {
             checkBox +="Add chocolate\n";
-            price+=(5*numberOfCoffees);
-        }
+            price+=(5*numberOfCoffees); }
         //connecting the input for
         EditText nameEditText = findViewById(R.id.editText_name);
         //i am using the .getText() to get the input from the EditText into the String that is displayed. calling it in the String instead of casting it into a
