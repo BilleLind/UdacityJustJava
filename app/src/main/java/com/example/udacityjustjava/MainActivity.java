@@ -36,24 +36,19 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         display(numberOfCoffees);
-        int price = calculatePrice();
-        displayPrice(createOrderSummary(price));
+        displayPrice(createOrderSummary(calculatePrice())+ "Thank you!"); //adding Thank you here, so it isn't displayed while "Browsing"
     }
 
-    private String priceMessageMethod() {
-        int price = calculatePrice();
-        return "Total: " + price + " kr.";
-    }
-    public void increment(View view) {
+    public void increment(View view) { // have added the creatOrderSummary here so it is updated for every click
     setNumberOfCoffees(getNumberOfCoffees()+1);
     display(numberOfCoffees);
-displayPrice(priceMessageMethod());
+    displayPrice(createOrderSummary(calculatePrice()));
     }
     public void decrement(View view) {
         if (getNumberOfCoffees()==0) {System.out.println("Error, at 0 coffees");
         } else { setNumberOfCoffees(getNumberOfCoffees()-1);
             display(numberOfCoffees);
-            displayPrice(priceMessageMethod());
+            displayPrice(createOrderSummary(calculatePrice()));
         }
     }
 
@@ -74,6 +69,7 @@ displayPrice(priceMessageMethod());
         priceTextView.setText(message);
     }
     private int calculatePrice() {
+
         return (numberOfCoffees * 20); }
 
 
@@ -85,12 +81,14 @@ displayPrice(priceMessageMethod());
         String checkBox=""; // initializes the checkbox so there aren't errors
         CheckBox whippedCreamCheckBox =  findViewById(R.id.checkBox_whipped_cream); //connects the checkbox to whippedCreamCheckBox
         if (whippedCreamCheckBox.isChecked()) { //using the built in methods to check if it is check or not
-             checkBox+="Add whipped cream\n"; // adding the corresponding String message to be input below
+             checkBox+="Add whipped cream\n";// adding the corresponding String message to be input below
+            price+=10;
         }
         //the same process happens below, note the "\n" as it changes to the next line
         CheckBox chocolateCheckBox = findViewById(R.id.checkBox_chocolate);
         if (chocolateCheckBox.isChecked()) {
             checkBox +="Add chocolate\n";
+            price+=10;
         }
         //connecting the input for
         EditText nameEditText = findViewById(R.id.editText_name);
@@ -99,8 +97,7 @@ displayPrice(priceMessageMethod());
         String priceMessage = "Name: " + nameEditText.getText() + "\n" +
                 checkBox + // since i am using += above, and \n the different toppings is added in here and are going to the next line and their value is displayed
                 "Quantity: " + numberOfCoffees +
-                "\nTotal: " + price + " kr.\n" +
-                "Thank you!";
+                "\nTotal: " + price + " kr.\n";
 
         return priceMessage; } //could delete this and move the return up before the "String priceMessage, but this is more clean in a way
 
