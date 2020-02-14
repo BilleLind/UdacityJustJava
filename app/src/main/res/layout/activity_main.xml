@@ -17,6 +17,16 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
+        <EditText
+            android:id="@+id/editText_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:layout_marginLeft="16dp" />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.os.Bundle;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -78,26 +79,27 @@ displayPrice(priceMessageMethod());
 
     private String createCustomerGreeting(String firstName, String lastName) {
         return "Welcome, " + firstName +" " + lastName + "!";
-    }
+    } // don't know if i needed this for this tutorial or just some practice :/
 
     private String createOrderSummary(int price) {
-        String checkBox="";
-        CheckBox whippedCreamCheckBox =  findViewById(R.id.checkBox_whipped_cream);
-        if (whippedCreamCheckBox.isChecked()) {
-             checkBox="Add whipped cream\n";
+        String checkBox=""; // initializes the checkbox so there aren't errors
+        CheckBox whippedCreamCheckBox =  findViewById(R.id.checkBox_whipped_cream); //connects the checkbox to whippedCreamCheckBox
+        if (whippedCreamCheckBox.isChecked()) { //using the built in methods to check if it is check or not
+             checkBox+="Add whipped cream\n"; // adding the corresponding String message to be input below
         }
+        //the same process happens below, note the "\n" as it changes to the next line
         CheckBox chocolateCheckBox = findViewById(R.id.checkBox_chocolate);
         if (chocolateCheckBox.isChecked()) {
             checkBox +="Add chocolate\n";
         }
-
-        String priceMessage = "Name: Yokarak\n" +
+        //connecting the input for
+        EditText nameEditText = findViewById(R.id.editText_name);
+        //i am using the .getText() to get the input from the EditText into the String that is displayed
+        String priceMessage = "Name: " + nameEditText.getText() + "\n" +
                 checkBox +
                 "Quantity: " + numberOfCoffees +
                 "\nTotal: " + price + " kr.\n" +
                 "Thank you!";
-        //if? for whipped cream
-
 
         return priceMessage; }
 
