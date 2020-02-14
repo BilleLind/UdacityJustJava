@@ -96,12 +96,12 @@ displayPrice(priceMessageMethod());
         EditText nameEditText = findViewById(R.id.editText_name);
         //i am using the .getText() to get the input from the EditText into the String that is displayed
         String priceMessage = "Name: " + nameEditText.getText() + "\n" +
-                checkBox +
+                checkBox + // since i am using += above, and \n the different toppings is added in here and are going to the next line and their value is displayed
                 "Quantity: " + numberOfCoffees +
                 "\nTotal: " + price + " kr.\n" +
                 "Thank you!";
 
-        return priceMessage; }
+        return priceMessage; } //could delete this and move the return up before the "String priceMessage, but this is more clean in a way
 
 
 
