@@ -86,9 +86,10 @@ displayPrice(priceMessageMethod());
         if (whippedCreamCheckBox.isChecked()) {
              checkBox="Add whipped cream\n";
         }
-
-
-
+        CheckBox chocolateCheckBox = findViewById(R.id.checkBox_chocolate);
+        if (chocolateCheckBox.isChecked()) {
+            checkBox +="Add chocolate\n";
+        }
 
         String priceMessage = "Name: Yokarak\n" +
                 checkBox +

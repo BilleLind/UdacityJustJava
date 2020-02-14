@@ -34,8 +34,18 @@
             android:textSize="16sp"
             android:layout_marginLeft="16dp"
             android:paddingLeft="24dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="8dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox_chocolate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chocolate"
+            android:textSize="16sp"
+            android:layout_marginLeft="16dp"
+            android:paddingLeft="24dp"
+            android:layout_marginBottom="8dp"
+            />
 
         <TextView
             android:id="@+id/Quantity"
@@ -105,6 +115,9 @@
             android:layout_marginLeft="16dp"
             android:textSize="16sp"
             android:onClick="submitOrder"/>
+
+
+
     </LinearLayout>
 
 </ScrollView>
