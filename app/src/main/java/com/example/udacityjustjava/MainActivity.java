@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CheckBox hasWippedCream =  findViewById(R.id.checkBox_whipped_cream);
+
 
 
     }
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String priceMessageMethod() {
         int price = calculatePrice();
-        return "Total; " + price + " kr.";
+        return "Total: " + price + " kr.";
     }
     public void increment(View view) {
     setNumberOfCoffees(getNumberOfCoffees()+1);
@@ -81,7 +81,17 @@ displayPrice(priceMessageMethod());
     }
 
     private String createOrderSummary(int price) {
+        String checkBox="";
+        CheckBox whippedCreamCheckBox =  findViewById(R.id.checkBox_whipped_cream);
+        if (whippedCreamCheckBox.isChecked()) {
+             checkBox="Add whipped cream\n";
+        }
+
+
+
+
         String priceMessage = "Name: Yokarak\n" +
+                checkBox +
                 "Quantity: " + numberOfCoffees +
                 "\nTotal: " + price + " kr.\n" +
                 "Thank you!";
