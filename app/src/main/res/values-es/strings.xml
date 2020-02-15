@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Quantity">CANTIDAD</string>
+    <string name="zero">0</string>
+    <string name="Order">ORDEN</string>
+    <string name="Price">Precio</string>
+    <string name="dollarzero"> 0 kr. </string>
+    <string name="Topping">Coberturas</string>
+    <string name="whippedCream">Crema batida</string>
+    <string name="name">Nombre</string>
+</resources>

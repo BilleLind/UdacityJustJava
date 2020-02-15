@@ -1,16 +1,17 @@
 <resources>
-    <string name="app_name">UdacityJustJava</string>
+    <string name="app_name" translatable="false">UdacityJustJava</string>
     <string name="Quantity">QUANTITY</string>
     <string name="zero">0</string>
-    <string name="ORDER">ORDER</string>
+    <string name="Order">ORDER</string>
     <string name="Price">Price</string>
-    <string name="dollarzero">$ 0</string>
-    <string name="plus">+</string>
-    <string name="minus">-</string>
-    <string name="stringForcost">Total: 0,00 kr.</string>
-    <string name="total"> Total: </string>
+    <string name="dollarzero"> 0 kr.</string>
+    <string name="plus" translatable="false">+</string>
+    <string name="minus" translatable="false">-</string>
+    <string name="stringForcost" translatable="false">Total: 0,00 kr.</string>
+    <string name="total" translatable="false"> Total: </string>
     <string name="Topping">Toppings</string>
     <string name="whippedCream">Whipped Cream</string>
-    <string name="chocolate">Chocolate</string>
+    <string name="chocolate" translatable="false">Chocolate</string>
     <string name="name">Name</string>
+
 </resources>
